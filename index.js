@@ -123,6 +123,7 @@ app.get("/", function (request, response) {
 
 app.get("/movies/:id",async (request,response) => {
   const {id} = request.params;
+  console.log(id);
   // const movie = movies.find((movie) => movie.id == id);
   // db.movies.findOne({})
   const movie = await client.db("b42wd2").collection("movies").findOne({id :`${id}`})
