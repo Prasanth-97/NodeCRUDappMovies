@@ -1,0 +1,14 @@
+1) Loose coupling is called modularity
+2) Loose coupling is achieved by universal language(json and rest)
+3) TO talk with multiple database orm is used
+
+
+To read 📖
+
+1) Imports and exports in node.js
+
+
+day-40 - additional session - leftover topics
+
+1) Express.js is a framework on node.js
+2)
