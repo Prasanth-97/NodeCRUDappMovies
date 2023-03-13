@@ -4,7 +4,10 @@ import express from "express";   // "type" : "module"
 // const express = require("express");   // "type" : "common.js"
 import { MongoClient } from "mongodb";
 import moviesRouter from "./router/movies.router.js";
-import cors from "cors"
+import cors from "cors";
+import bcrypt from "bcrypt";
+import usersRouter from "./router/users.router.js";
+
 const app = express();
 
 // console.log(process.env);
@@ -23,6 +26,7 @@ app.get("/", function (request, response) {
 
 app.use(cors())
 app.use("/movies",moviesRouter);
+app.use("/users",usersRouter);
 
 // task - show movies in /movies 
 
@@ -122,3 +126,4 @@ app.use("/movies",moviesRouter);
 
 
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
+
