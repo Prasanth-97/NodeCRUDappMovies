@@ -4,6 +4,7 @@ import express from "express";   // "type" : "module"
 // const express = require("express");   // "type" : "common.js"
 import { MongoClient } from "mongodb";
 import moviesRouter from "./router/movies.router.js";
+import cors from "cors"
 const app = express();
 
 // console.log(process.env);
@@ -20,6 +21,7 @@ app.get("/", function (request, response) {
   response.send("🙋‍♂️, 🌏 🎊✨🤩");
 });
 
+app.use(cors())
 app.use("/movies",moviesRouter);
 
 // task - show movies in /movies 
