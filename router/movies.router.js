@@ -1,5 +1,6 @@
 import express from "express";
 const router = express.Router();
+import { auth } from "../middleware/auth.js";
 import {
   getMovies,
   getMovieById,
@@ -8,7 +9,7 @@ import {
   deleteMovieById,
 } from "../service/movies.service.js";
 
-router.get("/", async function (request, response) {
+router.get("/",auth,async function (request, response) {
   const movies = await getMovies();
   // console.log(movies) // it returns cursor -> pagination(20 at a time)
   // to solve cursor convert it to array as toArray()
